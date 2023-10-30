@@ -6,8 +6,8 @@
  */
 int check_cycle(listint_t *list)
 {
-	lisnint_t *first;
-	linstin_t *second;
+	listint_t *first;
+	listint_t *second;
 
 	if (!list)
 		return (0);
