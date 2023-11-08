@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-best_score = __import__('10-best_score').best_score
-
-a_dictionary = {'John': 12, 'Bob': 14, 'Mike': 14, 'Molly': 16, 'Adam': 10}
-best_key = best_score(a_dictionary)
-print("Best score: {}".format(best_key))
-
-best_key = best_score(None)
-print("Best score: {}".format(best_key))
+def best_score(a_dictionary):
+    if not a_dictionary:
+        return None
+    else:
+        name = ''
+        score = 0
+        for key in a_dictionary:
+            if a_dictionary[key] > score:
+                name = key
+                score = a_dictionary[key]
+    return name
