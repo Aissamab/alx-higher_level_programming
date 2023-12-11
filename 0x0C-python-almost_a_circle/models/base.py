@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines a class Base"""
-
+import json
 
 class Base:
     """Class that defines properties of Base.
