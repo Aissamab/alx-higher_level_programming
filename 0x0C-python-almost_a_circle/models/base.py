@@ -21,7 +21,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+    
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries.
 
@@ -35,7 +37,7 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-
+    @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file.
 
@@ -56,7 +58,8 @@ class Base:
 
         with open(filename, 'w') as f:
             f.write(lists)
-        
+
+    @staticmethod
     def from_json_string(json_string):
         """ Returns the list of the JSON string representation json_string.
 
@@ -70,7 +73,8 @@ class Base:
             return []
         return(json.loads(json_string))
 
-     def create(cls, **dictionary):
+    @classmethod
+    def create(cls, **dictionary):
         """Returns an instance with all attributes already set.
 
         Args:
@@ -89,6 +93,7 @@ class Base:
         # print("cls type --> {}".format(type(cls)))
         return(dummy)
 
+    @classmethod
     def load_from_file(cls):
         """Returns a list of instances.
 
@@ -113,5 +118,4 @@ class Base:
             list_ins.append(cls.create(**list_cls[index]))
 
         return list_ins
-
 

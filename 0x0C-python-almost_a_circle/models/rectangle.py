@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """Defines a class Rectangle that inherits from Base"""
-
+from models.base import Base
 
 class Rectangle(Base):
+
     """Class that defines properties of Rectangle.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Creates new instances of a rectangle
-        """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        """Creates new instances of a rectangle."""
 
-     @property
+            self.width = width
+            self.height = height
+            self.x = x
+            self.y = y
+
+    @property
     def width(self):
         """Width of this rectangle"""
         return self.__width
@@ -26,7 +27,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
+            self.__width = value
 
     @property
     def height(self):
@@ -56,7 +57,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if value <= 0:
             raise ValueError("x must be > 0")
-        self.__x = value
+                self.__x = value
 
     @property
     def y(self):
@@ -71,7 +72,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value <= 0:
             raise ValueError("y must be > 0")
-        self.__y = value
+            self.__y = value
 
     def area(self):
         """Calculates the area of a rectangle.
@@ -94,11 +95,10 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-     def __str__(self):
+    def __str__(self):
         """Prints rectangle"""
         return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
-                format(self.id, self.__x, self.__y, self.__width,
-                       self.__height))
+        format(self.id, self.__x, self.__y, self.__width, self.__height))
 
     
     def update(self, *args, **kwargs):
